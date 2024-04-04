@@ -6,8 +6,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/": "http://localhost:5000",
-      "/uploads/": "http://localhost:5000",
+      "/api/":{
+        target: "https://ecommerce-bj60.onrender.com",
+        changeOrigin:true,
+        secure:false,
+        },
+      "/uploads/": {
+        target :"https://ecommerce-bj60.onrender.com",
+      changeOrigin:true,
+    secure:false,
+  }
     },
   },
 });
